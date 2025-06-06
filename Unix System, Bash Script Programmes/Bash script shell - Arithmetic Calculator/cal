@@ -1,0 +1,43 @@
+#!/bin/bash
+
+input_file="$1"
+output_file="output.txt"  # Define the output file name
+
+# Check if the input file exists
+if [ ! -f "$input_file" ]; then
+    echo "Input file not found: $input_file"
+    exit 1
+fi
+
+# Initialize the output file or clear its contents if it already exists
+> "$output_file"
+
+# Read each line from the input file
+while IFS= read -r line; do
+    # Split the line into operands and operator
+    read -r operand1 operand2 operator <<< "$line"
+
+    # Perform the calculation based on the operator
+    if [ "$operator" = "xor" ]; then
+        result=$((operand1 ^ operand2))
+        operator_text="Result of xor"
+    elif [ "$operator" = "product" ]; then
+        result=$((operand1 * operand2))
+        operator_text="Result of product"
+    elif [ "$operator" = "compare" ]; then
+        if [ "$operand1" -gt "$operand2" ]; then
+            result="$operand1"
+        elif [ "$operand1" -lt "$operand2" ]; then
+            result="$operand2"
+        else
+            result="Both numbers are equal"
+        fi
+        operator_text="Result of compare"
+    else
+        echo "Unsupported operator: $operator"
+        continue
+    fi
+
+    # Append the result to the output file
+    echo "$operator_text $operand1 $operand2 = $result" >> "$output_file"
+done < "$input_file"
