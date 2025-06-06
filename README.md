@@ -1,5 +1,5 @@
 Unzip & Open in linux CL
-every folder cover differemt aspects. 
+every folder cover different aspects. 
 (Memory Management System)
 
 more to be included soon.
