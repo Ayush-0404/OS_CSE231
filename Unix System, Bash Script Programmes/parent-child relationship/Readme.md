@@ -96,5 +96,3 @@ This program demonstrates basic OS concepts:
 > For any questions or issues, feel free to open an issue in the main repository.
 
 ---
-
-Let me know if you want to adjust the sections or add more details!
