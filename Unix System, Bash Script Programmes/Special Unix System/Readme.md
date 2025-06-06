@@ -1,6 +1,6 @@
 # Special Unix System Shell Project
 
-In this project we implemented a custom shell in C with three specialized commands: `word`, `dir`, and `date`. The shell demonstrates process management, command parsing, and robust error handling.
+In this project we implemented a custom shell in C with three specialized commands: `word`, `dir`, and `date`. The shell demonstrates process management, command parsing, and robust error handling. Some parts are self explanatory- uses standard method.
 
 ---
 
@@ -158,6 +158,3 @@ See `Writeup.txt` in the "Unix System, Bash Script Programmes" folder for a conc
 ## License
 
 This project is for educational purposes only.
-```
-
----
