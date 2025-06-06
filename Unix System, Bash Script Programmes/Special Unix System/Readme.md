@@ -8,7 +8,8 @@ In this project we implemented a custom shell in C with three specialized comman
 
 - [Features](#features)
 - [Folder Structure](#folder-structure)
-- [Compilation](#compilation)
+- [Setup & Compilation](#setup--compilation)
+- [How to Run](#how-to-run)
 - [Usage](#usage)
   - [word](#word)
   - [dir](#dir)
@@ -23,7 +24,7 @@ In this project we implemented a custom shell in C with three specialized comman
 
 ## Features
 
-- **Custom C Shell**: A command-line interface for interacting with custom commands.
+- **Custom C Shell**: Command-line interface for interacting with custom commands.
 - **word**: Built-in command to count words in a file, with options for newline handling and difference comparison.
 - **dir**: External command to create and enter directories, with safe replace and verbose options.
 - **date**: External command for displaying a file’s last modified time, with flexible output formats.
@@ -35,7 +36,7 @@ In this project we implemented a custom shell in C with three specialized comman
 ```
 Unix System, Bash Script Programmes/
 ├── Makefile         # For compiling the shell and commands
-├── Writeup.txt      # Description of how the program works
+├── Writeup.txt      # Brief description of how the program works
 
 Unix System/
 ├── shell.c          # Main shell implementation
@@ -47,33 +48,55 @@ Unix System/
 
 ---
 
-## Compilation
+## Setup & Compilation
 
-Navigate to the "Unix System, Bash Script Programmes" folder and run:
+1. **Clone the repository** (if you haven’t already):
 
-```sh
-make
-```
+    ```sh
+    git clone https://github.com/Ayush-0404/OS_CSE231.git
+    ```
 
-This will compile the shell and all command programs.
+2. **Navigate to the project directory:**
+
+    ```sh
+    cd "OS_CSE231/Unix System, Bash Script Programmes"
+    ```
+
+3. **Build the project using the provided Makefile:**
+
+    ```sh
+    make
+    ```
+
+    This will compile the shell and all command programs. Output binaries will be placed in the appropriate folder (commonly in `Unix System/`).
+
+---
+
+## How to Run
+
+1. **Navigate to the folder containing the compiled shell binary.**  
+   (This may be `Unix System/` or wherever `shell` is created after compilation.)
+
+    ```sh
+    cd "../Unix System"
+    ```
+
+2. **Start the shell:**
+
+    ```sh
+    ./shell
+    ```
+
+3. **Use the custom commands as described below.**
 
 ---
 
 ## Usage
 
-### Start the Shell
+### word
 
-Navigate to the compiled directory and run:
-
-```sh
-./shell
-```
-
-### Commands
-
-#### word
-
-Counts words in a file or compares word counts. Only one of `-n` or `-d` can be used at a time.
+Counts words in a file or compares word counts.  
+**Only one of `-n` or `-d` can be used at a time.**
 
 ```sh
 word filename.txt
@@ -81,7 +104,7 @@ word -n filename.txt          # Ignores newline characters in word count
 word -d file1.txt file2.txt   # Shows difference in word counts
 ```
 
-#### dir
+### dir
 
 Creates a directory and changes into it. Handles errors and supports verbose output.
 
@@ -91,7 +114,7 @@ dir -r myfolder   # Removes existing directory if it exists, then creates it
 dir -v myfolder   # Verbose output for each step
 ```
 
-#### date
+### date
 
 Displays the last modified date/time of a file, with formatting options.
 
