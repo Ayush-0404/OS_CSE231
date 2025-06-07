@@ -42,6 +42,16 @@ A `SubChainNode` represents a sub-chain, which can be either a hole (unused memo
 - `next`: A pointer to the next sub-chain node.
 - `prev`: A pointer to the previous sub-chain node.
 
+---
+
+### Structure of Free List
+
+**Structure free list looks like below:**
+
+![Structure free list](image.png)
+
+---
+
 ## Initialization
 
 ### `mems_init()`
@@ -62,7 +72,15 @@ The `mems_malloc()` function is used to allocate memory. It follows these steps:
   - If the total hole size is just enough for the requested size, it allocates the entire hole as a process segment.
 - If no suitable hole segment is found, a new main chain node is created using the `mmap` system call. This new node represents a main chain that contains a single process segment. A new sub-chain node is allocated within this main chain to represent the process segment.
 - The function returns the starting address of the allocated process segment.
+---
 
+### Hole Creation
+
+In the picture below, the Node1 of sub-chain-4 is reused by the user process but only 600 bytes out of 1000 bytes are used. Hence a HOLE of 400 bytes is created and the node of 600 bytes is marked as PROCESS and the MeMS virtual address corresponding to 600 bytes node is returned to the user process for further use.
+
+![Hole example](Screenshot%202025-06-07%20064035.png)
+
+---
 ## Memory Deallocation
 
 ### `mems_free(void* v_ptr)`
@@ -88,6 +106,11 @@ The `mems_finish()` function is used to release the allocated memory and clean u
 ## Getting Physical Address
 
 ### `mems_get(void* v_ptr)`
+
+
+We can get the MeMS physical address (i.e. the actual address returned by mmap) corresponding to a MeMS virtual address by using the function mems_get function (see below for more details).
+
+![MeMS physical address](Screenshot%202025-06-07%20062553.png)
 
 The `mems_get()` function is provided to convert a MeMS virtual address (`v_ptr`) into a physical address. However, it currently only returns the same virtual address.
 
