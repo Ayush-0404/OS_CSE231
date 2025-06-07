@@ -141,7 +141,6 @@ date -R file.txt              # Output date in RFC 5322 format
 Below is the screenshots demonstrating the working of the calculator script:
 
 ![Calculator Working - Step 1](image.png)
-<!-- Add more screenshots as needed -->
 
 ## Notes
 
