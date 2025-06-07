@@ -101,6 +101,24 @@ Bash script shell - Arithmetic Calculator/
 15
 ```
 
+
+## Screenshots
+
+Below are some screenshots demonstrating the working of the calculator script:
+
+![Calculator Working - Step 1](Screenshot%202025-06-07%20060951.png)
+![Calculator Working - Step 2](Screenshot%202025-06-07%20061010.png)
+![Calculator Working - Step 2](Screenshot%202025-06-07%20061026.png)
+![Calculator Working - Step 2](Screenshot%202025-06-07%20061038.png)
+
+<!-- Add more screenshots as needed -->
+
+## Notes
+
+- Ensure `input.txt` is formatted as specified.
+- Only the three specified operations (`xor`, `product`, `compare`) are supported.
+- The script is written purely in Bash and uses standard utilities.
+
 ## Notes
 
 - Ensure `input.txt` is formatted as specified.
