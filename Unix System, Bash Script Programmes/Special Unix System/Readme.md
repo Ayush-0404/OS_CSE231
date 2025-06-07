@@ -135,6 +135,20 @@ date -R file.txt              # Output date in RFC 5322 format
 
 ---
 
+
+## Screenshots
+
+Below is the screenshots demonstrating the working of the calculator script:
+
+![Calculator Working - Step 1](image.png)
+<!-- Add more screenshots as needed -->
+
+## Notes
+
+- Ensure `input.txt` is formatted as specified.
+- Only the three specified operations (`xor`, `product`, `compare`) are supported.
+- The script is written purely in Bash and uses standard utilities.
+
 ## Error Handling
 
 - Invalid commands output a clear error message.
