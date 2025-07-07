@@ -4,3 +4,6 @@ every folder cover different aspects.
 
 more to be included soon.
 multithreading, pipelining and realted topic work.
+
+1. Memory Management Systems 
+2. Custom Unix Shell
